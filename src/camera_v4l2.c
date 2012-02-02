@@ -19,6 +19,8 @@
 
 #if defined(__unix__)
 
+#define V4L2_PIX_FMT_RGB444 1
+
 #include "camera.h"
 #include "pgcompat.h"
 

@@ -36,6 +36,7 @@
 #include "camera.h"
 #include "pgcompat.h"
 
+#define V4L2_PIX_FMT_RGB444 1
 /*
 #if defined(__unix__) || !defined(__APPLE__)
 #else
