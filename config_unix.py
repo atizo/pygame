@@ -72,7 +72,7 @@ class DependencyProg:
 
     def configure(self, incdirs, libdir):
         if self.found:
-            print (self.name + '        '[len(self.name):] + ': found ' + self.ver)
+            print (self.name + '        '[len(self.name):] + ': found ' + self.ver + '\n')
             self.found = 1
         else:
             print (self.name + '        '[len(self.name):] + ': not found')
@@ -219,11 +219,10 @@ def main():
 
     for d in DEPS[1:]:
         if not d.found:
-            if "-auto" not in sys.argv and not confirm("""
+            print"""
 Warning, some of the pygame dependencies were not found. Pygame can still
 compile and install, but games that depend on those missing dependencies
-will not run. Would you like to continue the configuration?"""):
-                raise SystemExit
+will not run. Would you like to continue the configuration?"""
             break
 
     return DEPS
