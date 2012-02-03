@@ -610,5 +610,6 @@ if "install" in sys.argv:
     except:
         pass
 
-
-
+if "develop" in sys.argv:
+    dist_path = os.path.dirname(os.path.abspath(__file__))
+    shutil.move(os.path.join(dist_path, 'lib'), os.path.join(dist_path, 'pygame'))
