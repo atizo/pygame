@@ -611,5 +611,5 @@ if "install" in sys.argv:
         pass
 
 if "develop" in sys.argv:
-    dist_path = os.path.dirname(os.path.abspath(__file__))
-    shutil.move(os.path.join(dist_path, 'lib'), os.path.join(dist_path, 'pygame'))
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    if not os.path.exists('pygame'): os.symlink('lib', 'pygame')
